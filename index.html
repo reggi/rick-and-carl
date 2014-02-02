@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+      body{
+        margin:0;
+      }
+      .head{
+        position:absolute;
+        top:90px;
+        left:429px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./rick-and-carl.png">
+    <img src="./ricks-head.png" class="head">
+    <script>
+
+      /*
+      $("body").on("mouseover", function(e){
+        var mouse_y = e.clientY;
+        var mouse_x = e.clientX;
+        //$(".head").on("mouseover", function(e){
+          $('.head').offset({
+              left: e.pageX,
+              top: e.pageY
+          });
+        //});
+      });
+      */
+
+      /*
+      $("body").mousemove(function(e){
+        $('.head').css({'top': e.clientY - 20, 'left': e.clientX - 20});
+      });
+      */
+
+      $(document).ready(function() {
+        $(".head").on("mouseover", function(e){
+          $(document).mousemove(function(e) {
+            pointer = $('<img>').attr({'src':'./ricks-head.png'});
+            $(document.body).append(pointer);
+            pointer.css({
+              'position':'absolute',
+              top: e.clientY - (122/2),    //offsets
+              left: e.clientX - (152/2)  //offsets
+            });
+          });
+        });
+      });
+
+
+
+
+      
+
+    </script>
+  </body>
+</html>

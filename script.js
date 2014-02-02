@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $(".head").draggable({
-        //helper: "clone",
         drag: function(event, ui) {
             var position = $(".ui-draggable-dragging").position();
             pointer = $('<img>').attr({
@@ -11,7 +10,7 @@ $(document).ready(function() {
                 "position": 'absolute',
                 "top": position.top,
                 "left": position.left
-            });
+            })
         }
     });
 });
